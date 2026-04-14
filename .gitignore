@@ -31,3 +31,15 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Node ###
+node_modules/
+package-lock.json
+
+### Logs and Temp ###
+*.log
+git_out.txt
+
+### OS Specific ###
+.DS_Store
+Thumbs.db
