@@ -11,7 +11,7 @@ The primary goal of this module is to provide a scalable and secure foundation f
 - **Framework**: Spring Boot 3.5.11
 - **Security**: Spring Security + JWT (JSON Web Token)
 - **Data Access**: Spring Data JPA
-- **Database**: H2 In-Memory (Dev/Test) / PostgreSQL Ready (Prod)
+- **Database**: MySQL (Local) / PostgreSQL Ready (Prod)
 - **Language**: Java 21
 - **Build Tool**: Maven
 
