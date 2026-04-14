@@ -44,10 +44,22 @@ Dedicated dashboards and endpoints secured by role permissions:
 | `/api/v1/customer/**`| GET | Customer/Admin | Customer-specific dashboards and orders. |
 | `/api/v1/public/health`| GET | Public | Server health status check. |
 
+## 🔧 Recent Changes & Verification
+
+We have recently transitioned the database layer and verified the core functionality:
+- **Database Migration**: Switched from H2/PostgreSQL to **MySQL**.
+- **Configuration**: Updated `pom.xml` with `mysql-connector-j` and aligned `application.properties` with local MySQL credentials.
+- **API Verification**:
+  - **POST `/auth/signup`**: Verified new user creation in MySQL.
+  - **POST `/auth/login`**: Verified JWT generation and validation.
+  - **GET `/admin/dashboard`**: Verified role-based access control (RBAC) with active tokens.
+- **Git Cleanup**: Optimized the repository by ignoring build artifacts and sensitive temp files.
+
 ## 🚦 Getting Started
 
 ### Prerequisites
 - JDK 21
+- MySQL Server (Running on port 3306)
 - Maven (or use the provided `mvnw` wrapper)
 
 ### Installation & Run
@@ -59,16 +71,9 @@ Dedicated dashboards and endpoints secured by role permissions:
    ```bash
    ./mvnw spring-boot:run
    ```
-3. **Access the H2 Console (Optional)**:
-   Navigate to `http://localhost:8081/api/v1/h2-console` (Username: `sa`, Password: `password`).
 
 ## 👤 Default Credentials
 The application is pre-seeded via `data.sql` with the following test users (password is `password` for all):
 - **Admin**: `admin`
 - **Supplier**: `supplier`
 - **Customer**: `customer`
-
-## 🔧 Recent Improvements
-- Optimized `pom.xml` dependency scopes for runtime database access.
-- Standardized JWT secret keys across properties and source code.
-- Implemented comprehensive integration tests in `AuthIntegrationTests.java`.
