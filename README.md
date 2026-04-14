@@ -11,7 +11,7 @@ The primary goal of this module is to provide a scalable and secure foundation f
 - **Framework**: Spring Boot 3.5.11
 - **Security**: Spring Security + JWT (JSON Web Token)
 - **Data Access**: Spring Data JPA
-- **Database**: MySQL (Local) / PostgreSQL Ready (Prod)
+- **Database**: MySQL (Local / Production)
 - **Language**: Java 21
 - **Build Tool**: Maven
 
@@ -47,7 +47,7 @@ Dedicated dashboards and endpoints secured by role permissions:
 ## 🔧 Recent Changes & Verification
 
 We have recently transitioned the database layer and verified the core functionality:
-- **Database Migration**: Switched from H2/PostgreSQL to **MySQL**.
+- **Database Migration**: Successfully transitioned to **MySQL**.
 - **Configuration**: Updated `pom.xml` with `mysql-connector-j` and aligned `application.properties` with local MySQL credentials.
 - **API Verification**:
   - **POST `/auth/signup`**: Verified new user creation in MySQL.
